@@ -1,11 +1,36 @@
-<!--The content below is only a placeholder and can be replaced.-->
 <div class="container">
+
+  <div class="modal fade" id="changelog" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="changelogLabel">Changelog</h4>
+        </div>
+        <div class="modal-body">
+          <span>0.1.1 | Fri 7:30 PM EDT</span>
+          <ul>
+            <li>Added changelog</li>
+          </ul>
+          <span>0.1.0 | Fri 7:15 PM EDT</span>
+          <ul>
+            <li>Initial Release</li>
+          </ul>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div class="row">
     <div class="col-xs-12">
       <h1>
         Attack of the Radioactive Thing: Chemistry Calculator
       </h1>
-      <h4>by wellslogan</h4>
+      <h4><strong>by wellslogan</strong></h4>
+      <span>Version 0.0.1 | <a href="#" data-target="#changelog" data-toggle="modal">Changelog</a></span>
 
       <h6><em>A special presentation of <a target="_blank" rel="noopener" href="http://reddit.com/r/codzombies">/r/codzombies</a></em></h6>
     </div>
@@ -51,11 +76,11 @@
       <div *ngFor="let rec of recipes">
         <h3>{{rec.result.name}}</h3>
         <ul>
-          <li [ngClass]="{'bg-danger': ing.costa == undefined || ing.costb == undefined}" *ngFor="let ing of rec.ingredients"><a href="#{{ing.name}}">{{ing.name}}</a> 
-          <span *ngIf="ing.costa != undefined && ing.costb != undefined">({{ing.costa}}, {{ing.costb}})</span></li>
+          <li [ngClass]="{'bg-danger': ing.costa == undefined || ing.costb == undefined}" *ngFor="let ing of rec.ingredients"><a href="#{{ing.name}}">{{ing.name}}</a>
+            <span *ngIf="ing.costa != undefined && ing.costb != undefined">({{ing.costa}}, {{ing.costb}})</span></li>
         </ul>
         <div *ngIf="notNan(calculateRecipe(rec)) else needCosts">
-        <p>The cost for this item is <strong>{{calculateRecipe(rec)}}</strong></p>
+          <p>The cost for this item is <strong>{{calculateRecipe(rec)}}</strong></p>
         </div>
         <ng-template #needCosts>Please fill in the costs for the above ingredients.</ng-template>
       </div>
