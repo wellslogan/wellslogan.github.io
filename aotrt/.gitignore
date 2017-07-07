@@ -1,7 +1,7 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 
 # compiled output
-/dist
+# /dist ## It's GH pages, we want the output to be committed!
 /tmp
 /out-tsc
 
