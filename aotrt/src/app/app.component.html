@@ -29,7 +29,8 @@
       <h1>
         Attack of the Radioactive Thing: Chemistry Calculator
       </h1>
-      <h4><strong>by wellslogan</strong> | <a href="https://docs.google.com/document/d/1_Zco-XbZJb_d4o6J0FrKH-wj2NTK5-z0wsEUOow6ISY/edit#" target="_blank" rel="noopener">Information & Recipes sourced from the /r/codzombies community guide hosted by /u/The_Kronorium</a></h4>
+      <h4><strong>by wellslogan</strong> | <a href="https://docs.google.com/document/d/1_Zco-XbZJb_d4o6J0FrKH-wj2NTK5-z0wsEUOow6ISY/edit#"
+          target="_blank" rel="noopener">Information & Recipes sourced from the /r/codzombies community guide hosted by /u/The_Kronorium</a></h4>
       <span>Version {{changelog[0].version}} | <a href="#" data-target="#changelog" data-toggle="modal">Changelog</a></span>
 
       <h6><em>A special presentation of <a target="_blank" rel="noopener" href="http://reddit.com/r/codzombies">/r/codzombies</a></em></h6>
@@ -51,25 +52,28 @@
           </div>
         </div>
 
-        <div class="panel panel-default board" *ngFor="let board of ingredients">
-          <div class="panel-body board-body">
+        <div *ngFor="let board of boards">
+          <h3>{{board.title}}</h3>
+          <div class="panel panel-default board">
+            <div class="panel-body board-body">
 
-            <div class="form-group" *ngFor="let ingredient of board">
-              <div *ngIf="ingredient.boardItem">
-                <a name="{{ingredient.name}}"></a>
-                <label class="col-sm-4 col-xs-4 control-label">{{ingredient.name}}</label>
-                <div class="col-sm-4 col-xs-4">
-                  <input [(ngModel)]="ingredient.costa" [ngModelOptions]="{standalone: true}" type="number" class="form-control" placeholder="Value A"
-                  />
-                </div>
+              <div class="form-group" *ngFor="let ingredient of board.ingredients">
+                <div *ngIf="ingredient.boardItem">
+                  <a name="{{ingredient.name}}"></a>
+                  <label class="col-sm-4 col-xs-4 control-label">{{ingredient.name}}</label>
+                  <div class="col-sm-4 col-xs-4">
+                    <input [(ngModel)]="ingredient.costa" [ngModelOptions]="{standalone: true}" type="number" class="form-control" placeholder="Value A"
+                    />
+                  </div>
 
-                <div class="col-sm-4 col-xs-4">
-                  <input [(ngModel)]="ingredient.costb" [ngModelOptions]="{standalone: true}" type="number" class="form-control" placeholder="Value B"
-                  />
+                  <div class="col-sm-4 col-xs-4">
+                    <input [(ngModel)]="ingredient.costb" [ngModelOptions]="{standalone: true}" type="number" class="form-control" placeholder="Value B"
+                    />
+                  </div>
                 </div>
               </div>
-            </div>
 
+            </div>
           </div>
         </div>
       </form>

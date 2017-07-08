@@ -38,6 +38,15 @@ let boardIngredientsList = [
       "Dinitro"]
     ];
 
+let boardTitles = [
+  "TV Station Board",
+  "Trailer Park Board",
+  "Beach Board",
+  "Spawn Room Board",
+  "Beachside Market Rear Board",
+  "Garage Board"
+]
+
 let nonBoardIngredientsList = [
       ["3-methyl-2,4-di-nitrobenzene",
       "3,4-di-nitroxy-methyl-propane",
@@ -64,48 +73,56 @@ let recipesList = [
     ];
 
 export class InitData {
-    
-  static ingredients(): Ingredient[][] {
-    let result = boardIngredientsList.map((outerVal, outerIdx) => {
-      return outerVal.map((val, idx) => {
-        return new Ingredient(0, val);
-      });
-    });
+  boards: Board[] = [];
+  ingredients: Ingredient[] = [];
+  recipes: Recipe[] = [];
 
-    result = result.concat(nonBoardIngredientsList.map((outerVal, outerIdx) => {
-      return outerVal.map((val, idx) => {
-        return new Ingredient(0, val, false);
-      });
-    }));
-
-    return result;
+  constructor(){
+    this.initIngredients(0, boardIngredientsList, true);
+    this.initIngredients(boardIngredientsList.length, nonBoardIngredientsList, false);
+    this.initRecipes(recipesList);
   }
 
-  static getIngredientByName(name: string, ingredients: Ingredient[][]): Ingredient {
-    for (let i = 0; i < ingredients.length; i++) {
-      for (let j = 0; j < ingredients[i].length; j++) {
-        if (ingredients[i][j].name === name) {
-          return ingredients[i][j];
-        }
+  initIngredients(startId: number, list: string[][], board: boolean): void {
+    if (board && list.length !== boardTitles.length) {
+      console.log('board & titles size mismatch');
+      return;
+    }
+
+    for (let i = 0; i < list.length; i++) {
+      let ingredientsToAdd = [];
+      for (let j = 0; j < list[i].length; j++) {
+        let toAdd = new Ingredient(startId, list[i][j])
+        ingredientsToAdd.push(toAdd);
+        this.ingredients.push(toAdd);
+        startId += 1;
+      }
+      if (board) {
+        this.boards.push(new Board(boardTitles[i], ingredientsToAdd))
+      }
+    }
+  }
+
+  getIngredientByName(name: string): Ingredient {
+    for (let i = 0; i < this.ingredients.length; i++) {
+      if (this.ingredients[i].name === name) {
+        return this.ingredients[i];
       }
     }
     console.log('ingredient "' + name + '" not found in array');
     return undefined;
   }
 
-  static recipes(ings: Ingredient[][]): Recipe[] {
-    let result = [];   
+  initRecipes(list: string[][]): void {
 
-    for (let i = 0; i < recipesList.length; i++) {
-      let ingredientsToAdd = recipesList[i].slice(1).map((val, index) => {
-        return InitData.getIngredientByName(val, ings);
+    for (let i = 0; i < list.length; i++) {
+      let ingredientsToAdd = list[i].slice(1).map((val, index) => {
+        return this.getIngredientByName(val);
       });
-      result = result.concat(new Recipe(
-        InitData.getIngredientByName(recipesList[i][0], ings),
+      this.recipes.push(new Recipe(
+        this.getIngredientByName(list[i][0]),
         ingredientsToAdd
       ));
     }
-
-    return result;
   }
 }

@@ -19,10 +19,19 @@ export class AppComponent implements IAppComponent {
   magicNumber = 0;
 
   constructor() {
-    this.ingredients = InitData.ingredients();
-    this.recipes = InitData.recipes(this.ingredients);
+    let init = new InitData();
+    this.ingredients = init.ingredients;
+    this.recipes = init.recipes;
+    this.boards = init.boards;
 
     this.changelog = [
+      new ChangelogEntry(
+        "0.1.3",
+        "Fri 2017/07/07 10:30 PM EDT",
+        [
+          "Added titles for each board",
+        ]
+      ),
       new ChangelogEntry(
         "0.1.2",
         "Fri 2017/07/07 8:30 PM EDT",
