@@ -48,7 +48,7 @@ let nonBoardIngredientsList = [
 let recipesList = [
       ["Acetaldehyde", "Vodka", "Pennies"],
       ["Glycerol", "Fat", "Vodka"],
-      ["Methylbenzene", "Paint"],
+      ["Methylbenzene", "Paint", "Drain Opener", "Detergent"],
       ["Nitrated Glycerol Solution", "Mixed Acid", "Glycerol"],
       ["Mixed Acid", "Detergent", "Drain Opener", "Ice"],
       ["Hexamine", "Glass Cleaner", "Formeldahyde"],
@@ -56,10 +56,10 @@ let recipesList = [
       ["Phenol", "Wheel Cleaner", "Motor Oil", "Insect Repellant"],
       ["Aldehyde Sludge", "Formeldahyde", "Acetaldehyde", "Detergent"],
       ["Formeldahyde", "Racing Fuel", "Quarters"],
-      ["Dinitro", "Paint", "Baking Soda", "Vinegar", "Detergent"],
+      ["Dinitro", "Methylbenzene", "Baking Soda", "Vinegar", "Detergent"],
       ["3-methyl-2,4-di-nitrobenzene", "Dinitro", "Racing Fuel"],
       ["3,4-di-nitroxy-methyl-propane", "Aldehyde Sludge", "Nail Polish Remover"],
-      ["Octa-hydro-2,5-nitro-3,4,7-para-zokine", "Vinegar", "Plant Food", "Detergent", "Hexamine"],
+      ["Octa-hydro-2,5-nitro-3,4,7-para-zokine", "Formeldahyde", "Hexamine"],
       ["1,3,5-tera-nitra-phenol", "Detergent", "Phenosulfonic Acid"]
     ];
 

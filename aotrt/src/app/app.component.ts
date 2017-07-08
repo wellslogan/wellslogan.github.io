@@ -27,7 +27,8 @@ export class AppComponent implements IAppComponent {
         "0.1.2",
         "Fri 2017/07/07 8:30 PM EDT",
         [
-          "Split ingredients list by in-game chalk board"
+          "Split ingredients list by in-game chalk board",
+          "Fixed recipes for methylbenzene, dinitro"
         ]
       ),
       new ChangelogEntry(
