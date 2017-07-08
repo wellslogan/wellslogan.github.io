@@ -2,7 +2,8 @@ import { Component } from '@angular/core';
 import { InitData } from './app.initdata';
 import { Ingredient } from './models/model.ingredient';
 import { Recipe } from './models/model.recipe';
-
+import { Board } from './models/model.board';
+import { ChangelogEntry } from './models/model.changelogEntry';
 
 @Component({
   selector: 'app-root',
@@ -11,13 +12,39 @@ import { Recipe } from './models/model.recipe';
 })
 
 export class AppComponent implements IAppComponent {
+  changelog: ChangelogEntry[];
   ingredients = [];
+  boards = [];
   recipes = [];
   magicNumber = 0;
 
   constructor() {
     this.ingredients = InitData.ingredients();
     this.recipes = InitData.recipes(this.ingredients);
+
+    this.changelog = [
+      new ChangelogEntry(
+        "0.1.2",
+        "Fri 2017/07/07 8:30 PM EDT",
+        [
+          "Split ingredients list by in-game chalk board"
+        ]
+      ),
+      new ChangelogEntry(
+        "0.1.1",
+        "Fri 2017/07/07 7:30 PM EDT",
+        [
+          "Added changelog"
+        ]
+      ),
+      new ChangelogEntry(
+        "0.1.0",
+        "Fri 2017/07/07 7:15 EDT",
+        [
+          "Initial release"
+        ]
+      )
+    ]
     
   }
 

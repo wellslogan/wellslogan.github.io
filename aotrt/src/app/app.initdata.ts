@@ -1,47 +1,48 @@
 import { Ingredient } from './models/model.ingredient';
 import { Recipe } from './models/model.recipe';
-
+import { Board } from './models/model.board';
+ 
 let boardIngredientsList = [
-      "Acetaldehyde",
+      ["Acetaldehyde",
       "Glycerol",
       "Methylbenzene",
       "Nitrated Glycerol Solution",
-      "Mixed Acid",
-      "Plant Food",
+      "Mixed Acid"],
+      ["Plant Food",
       "Paint",
       "Vinegar",
       "Ice",
       "Bleach",
-      "Powdered Milk",
-      "Fat",
+      "Powdered Milk"],
+      ["Fat",
       "Motor Oil",
       "Wheel Cleaner",
-      "Table Salt",
-      "Racing Fuel",
+      "Table Salt"],
+      ["Racing Fuel",
       "Insect Repellant",
       "Vodka",
       "Baking Soda",
       "Detergent",
-      "Food Coloring",
-      "Drain Opener",
+      "Food Coloring"],
+      ["Drain Opener",
       "Quarters",
       "Glass Cleaner",
       "Nail Polish Remover",
       "Pennies",
-      "Pool Cleaner",
-      "Hexamine",
+      "Pool Cleaner"],
+      ["Hexamine",
       "Phenosulfonic Acid",
       "Phenol",
       "Aldehyde Sludge",
       "Formeldahyde",
-      "Dinitro"
+      "Dinitro"]
     ];
 
 let nonBoardIngredientsList = [
-      "3-methyl-2,4-di-nitrobenzene",
+      ["3-methyl-2,4-di-nitrobenzene",
       "3,4-di-nitroxy-methyl-propane",
       "Octa-hydro-2,5-nitro-3,4,7-para-zokine",
-      "1,3,5-tera-nitra-phenol"
+      "1,3,5-tera-nitra-phenol"]
     ];
 
 let recipesList = [
@@ -64,30 +65,35 @@ let recipesList = [
 
 export class InitData {
     
-  static ingredients(): Ingredient[] {
-    let result = [];
-    for (let i = 0; i < boardIngredientsList.length; i++) {
-      result = result.concat(new Ingredient(i, boardIngredientsList[i]));
-    }
+  static ingredients(): Ingredient[][] {
+    let result = boardIngredientsList.map((outerVal, outerIdx) => {
+      return outerVal.map((val, idx) => {
+        return new Ingredient(0, val);
+      });
+    });
 
-    for (let i = 0; i < nonBoardIngredientsList.length; i++) {
-      result = result.concat(new Ingredient(i + boardIngredientsList.length, nonBoardIngredientsList[i], false));
-    }
+    result = result.concat(nonBoardIngredientsList.map((outerVal, outerIdx) => {
+      return outerVal.map((val, idx) => {
+        return new Ingredient(0, val, false);
+      });
+    }));
 
     return result;
   }
 
-  static getIngredientByName(name: string, ingredients: Ingredient[]): Ingredient {
+  static getIngredientByName(name: string, ingredients: Ingredient[][]): Ingredient {
     for (let i = 0; i < ingredients.length; i++) {
-      if (ingredients[i].name === name) {
-        return ingredients[i];
+      for (let j = 0; j < ingredients[i].length; j++) {
+        if (ingredients[i][j].name === name) {
+          return ingredients[i][j];
+        }
       }
     }
     console.log('ingredient "' + name + '" not found in array');
     return undefined;
   }
 
-  static recipes(ings: Ingredient[]): Recipe[] {
+  static recipes(ings: Ingredient[][]): Recipe[] {
     let result = [];   
 
     for (let i = 0; i < recipesList.length; i++) {

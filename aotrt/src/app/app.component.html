@@ -8,14 +8,14 @@
           <h4 class="modal-title" id="changelogLabel">Changelog</h4>
         </div>
         <div class="modal-body">
-          <span>0.1.1 | Fri 7:30 PM EDT</span>
-          <ul>
-            <li>Added changelog</li>
-          </ul>
-          <span>0.1.0 | Fri 7:15 PM EDT</span>
-          <ul>
-            <li>Initial Release</li>
-          </ul>
+          <div *ngFor="let entry of changelog">
+            <span>{{entry.version}} | {{entry.time}}</span>
+            <ul>
+              <li *ngFor="let log of entry.updated">{{log}}</li>
+            </ul>
+            <span *ngIf="entry.message">{{entry.message}}</span>
+            <hr/>
+          </div>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -30,7 +30,7 @@
         Attack of the Radioactive Thing: Chemistry Calculator
       </h1>
       <h4><strong>by wellslogan</strong></h4>
-      <span>Version 0.0.1 | <a href="#" data-target="#changelog" data-toggle="modal">Changelog</a></span>
+      <span>Version {{changelog[0].version}} | <a href="#" data-target="#changelog" data-toggle="modal">Changelog</a></span>
 
       <h6><em>A special presentation of <a target="_blank" rel="noopener" href="http://reddit.com/r/codzombies">/r/codzombies</a></em></h6>
     </div>
@@ -51,19 +51,25 @@
           </div>
         </div>
 
-        <div class="form-group" *ngFor="let ingredient of ingredients">
-          <div *ngIf="ingredient.boardItem">
-            <a name="{{ingredient.name}}"></a>
-            <label class="col-sm-4 col-xs-4 control-label">{{ingredient.name}}</label>
-            <div class="col-sm-4 col-xs-4">
-              <input [(ngModel)]="ingredient.costa" [ngModelOptions]="{standalone: true}" type="number" class="form-control" placeholder="Value A"
-              />
+        <div class="panel panel-default board" *ngFor="let board of ingredients">
+          <div class="panel-body board-body">
+
+            <div class="form-group" *ngFor="let ingredient of board">
+              <div *ngIf="ingredient.boardItem">
+                <a name="{{ingredient.name}}"></a>
+                <label class="col-sm-4 col-xs-4 control-label">{{ingredient.name}}</label>
+                <div class="col-sm-4 col-xs-4">
+                  <input [(ngModel)]="ingredient.costa" [ngModelOptions]="{standalone: true}" type="number" class="form-control" placeholder="Value A"
+                  />
+                </div>
+
+                <div class="col-sm-4 col-xs-4">
+                  <input [(ngModel)]="ingredient.costb" [ngModelOptions]="{standalone: true}" type="number" class="form-control" placeholder="Value B"
+                  />
+                </div>
+              </div>
             </div>
 
-            <div class="col-sm-4 col-xs-4">
-              <input [(ngModel)]="ingredient.costb" [ngModelOptions]="{standalone: true}" type="number" class="form-control" placeholder="Value B"
-              />
-            </div>
           </div>
         </div>
       </form>
