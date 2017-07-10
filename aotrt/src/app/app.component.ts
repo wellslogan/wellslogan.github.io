@@ -26,6 +26,13 @@ export class AppComponent implements IAppComponent {
 
     this.changelog = [
       new ChangelogEntry(
+        "0.1.4",
+        "Sun 2017/07/09 8:40 PM EDT",
+        [
+          "Fixed Octa... recipe to add plant food and vinegar",
+        ]
+      ),
+      new ChangelogEntry(
         "0.1.3",
         "Fri 2017/07/07 10:30 PM EDT",
         [

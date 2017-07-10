@@ -68,7 +68,7 @@ let recipesList = [
       ["Dinitro", "Methylbenzene", "Baking Soda", "Vinegar", "Detergent"],
       ["3-methyl-2,4-di-nitrobenzene", "Dinitro", "Racing Fuel"],
       ["3,4-di-nitroxy-methyl-propane", "Aldehyde Sludge", "Nail Polish Remover"],
-      ["Octa-hydro-2,5-nitro-3,4,7-para-zokine", "Detergent", "Hexamine"],
+      ["Octa-hydro-2,5-nitro-3,4,7-para-zokine", "Detergent", "Hexamine", "Plant Food", "Vinegar"],
       ["1,3,5-tera-nitra-phenol", "Detergent", "Phenosulfonic Acid"]
     ];
 
