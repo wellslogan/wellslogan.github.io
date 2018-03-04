@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700');
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display:700');
+@import url('https://fonts.googleapis.com/css?family=Inconsolata:700');
+
+@import 'header';
+@import 'footer';
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  color: $darkgray;
+}
+
+h1 {
+  font-family: 'Playfair Display', serif;
+}
+
+.main {
+  margin: 100px auto;
+  border: 2px solid $lightgray;
+
+  > * {
+    padding: 20px;
+    
+    @include tablet {
+      padding: 20px 75px;
+    }
+  }
+
+  @include desktop {
+    max-width: 970px;
+  }
+
+
+  section {
+    color: $darkgray;
+    border-bottom: 1px solid $lightgray;
+
+    > h2 {
+      margin-top: 40px; 
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+  }
+}
+
+.bash {
+  background-color: $darkgray;
+  color: white;
+  border-radius: 0.75em;
+  padding: 30px 20px 20px 20px;
+  font-family: 'Inconsolata', 'Courier New', monospace;
+  position: relative;
+
+  &::before {
+    content: '';
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background-color: red;
+    border-radius: 15px;
+  }
+
+  p::before {
+    content: '$ ';
+  }
+
+  p:last-child::after {
+    content: '\02588';
+    animation: blink 0.9s steps(1, start) infinite;
+    -webkit-animation: blink 0.9s steps(1, start) infinite;
+  }
+
+  @keyframes blink {
+    50% { opacity: 0; }
+  }
+  @-webkit-keyframes blink {
+    50% { opacity: 0; }
+  }
+}

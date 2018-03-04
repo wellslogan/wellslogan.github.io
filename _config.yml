@@ -1,0 +1,19 @@
+title: Logan Wells
+email: wellslogan@gmail.com
+description: >- 
+  Full-stack Web Developer based in Boston, MA.
+baseurl: ""
+url: "https://wellslogan.com"
+twitter_username: wellslogan
+github_username:  wellslogan
+linkedin_username: wellslogan1
+repoUrl: https://github.com/wellslogan/wellslogan.com
+markdown: kramdown
+plugins:
+  - jekyll-feed
+sass:
+  sass_dir: css
+exclude:
+  - aotrt/e2e
+  - aotrt/node_modules
+  - aotrt/src

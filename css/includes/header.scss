@@ -1,0 +1,52 @@
+.main {
+  header {
+    // @include lightgraygradient;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    border-bottom: 1px solid $lightgray;
+    padding-top: 75px;
+
+    h1 {
+      font-size: 2rem;
+      margin-right: auto;
+      min-width: 100%;
+      text-align: center;
+
+      @include tablet {
+        font-size: 3rem;
+        min-width: 0;
+        text-align: left;
+      }
+    }
+
+    .photo {
+      position: absolute;
+      top: 25px;
+      height: 164px;
+      width: 164px;
+      border-radius: 150px;
+      border: 7px solid $lightgray;
+      overflow: hidden;
+
+      img {
+        width: 150px;
+      }
+    }
+
+    .social-links {
+      align-self: center;
+
+      a {
+        margin: 10px;
+        font-size: 2em;
+        color: $darkgray;
+
+        &:hover {
+          color: red;
+          transition: color 0.1s linear;
+        }
+      }
+    }
+  }
+}
