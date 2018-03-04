@@ -7,7 +7,7 @@ url: "https://wellslogan.com"
 twitter_username: wellslogan
 github_username:  wellslogan
 linkedin_username: wellslogan1
-repoUrl: https://github.com/wellslogan/wellslogan.com
+repoLink: https://github.com/wellslogan/wellslogan.github.io
 markdown: kramdown
 plugins:
   - jekyll-feed
