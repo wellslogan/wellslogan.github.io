@@ -1,49 +1,58 @@
 {
-  "name": "aotrt",
-  "version": "0.0.0",
-  "license": "MIT",
-  "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e"
-  },
+  "name": "aotrt-react",
+  "version": "0.1.0",
   "private": true,
+  "homepage": ".",
   "dependencies": {
-    "@angular/animations": "^4.4.7",
-    "@angular/common": "^4.4.7",
-    "@angular/compiler": "^4.4.7",
-    "@angular/core": "^4.4.7",
-    "@angular/forms": "^4.4.7",
-    "@angular/http": "^4.4.7",
-    "@angular/platform-browser": "^4.4.7",
-    "@angular/platform-browser-dynamic": "^4.4.7",
-    "@angular/router": "^4.4.7",
-    "core-js": "^2.5.6",
-    "rxjs": "^5.5.10",
-    "zone.js": "^0.8.26"
+    "@fortawesome/fontawesome-pro": "^5.13.1",
+    "@fortawesome/fontawesome-svg-core": "^1.2.29",
+    "@fortawesome/free-solid-svg-icons": "^5.13.1",
+    "@fortawesome/pro-duotone-svg-icons": "^5.13.1",
+    "@fortawesome/react-fontawesome": "^0.1.11",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.3.2",
+    "@testing-library/user-event": "^7.1.2",
+    "@types/jest": "^24.0.0",
+    "@types/node": "^12.0.0",
+    "@types/react": "^16.9.0",
+    "@types/react-dom": "^16.9.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-modal-promise": "^0.5.2",
+    "react-redux": "^7.2.0",
+    "react-scripts": "3.4.1",
+    "react-tooltip": "^4.2.7",
+    "redux": "^4.0.5",
+    "redux-persist": "^6.0.0",
+    "tailwindcss": "^1.4.6",
+    "typescript": "~3.7.2"
+  },
+  "scripts": {
+    "start": "npm run build:css && react-scripts start",
+    "build": "npm run build:css && react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "build:css": "postcss src/styles/tailwind.scss -o src/styles/index.scss "
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   },
   "devDependencies": {
-    "@angular/cli": "1.2.0",
-    "@angular/compiler-cli": "^4.4.7",
-    "@angular/language-service": "^4.4.7",
-    "@types/jasmine": "^2.5.54",
-    "@types/jasminewd2": "^2.0.3",
-    "@types/node": "^6.0.111",
-    "codelyzer": "~3.0.1",
-    "jasmine-core": "~2.6.2",
-    "jasmine-spec-reporter": "~4.1.0",
-    "karma": "^1.7.1",
-    "karma-chrome-launcher": "~2.1.1",
-    "karma-cli": "~1.0.1",
-    "karma-coverage-istanbul-reporter": "^1.4.3",
-    "karma-jasmine": "^1.1.2",
-    "karma-jasmine-html-reporter": "^0.2.2",
-    "protractor": "~5.1.2",
-    "ts-node": "~3.0.4",
-    "tslint": "~5.3.2",
-    "typescript": "~2.3.3"
+    "@types/react-redux": "^7.1.9",
+    "autoprefixer": "^9.8.0",
+    "node-sass": "^4.14.1",
+    "postcss-cli": "^7.1.1"
   }
 }
