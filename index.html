@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Logan Wells is a full-stack web developer based in Boston.">
+    <meta name="theme-color" content="#f6f4ef">
+    <meta property="og:title" content="Logan Wells">
+    <meta property="og:description" content="A compact Codex-style brochure session for Logan Wells.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://wellslogan.com">
+    <title>Logan Wells</title>
+    <link rel="canonical" href="https://wellslogan.com">
+    <link rel="icon" type="image/png" sizes="400x400" href="assets/favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="assets/site.css?v=20260822-font">
+    <script src="assets/site.js" defer></script>
+  </head>
+  <body class="min-h-screen px-5 py-6 sm:px-8 sm:py-10 lg:px-10">
+    <main class="mx-auto min-h-[calc(100vh-3rem)] w-full max-w-6xl">
+      <section class="session-output" aria-labelledby="page-title">
+        <header class="mb-10 flex items-start justify-between gap-4 sm:mb-16">
+          <h1 id="page-title" class="sr-only">Logan Wells</h1>
+          <p class="prompt-pill ml-auto max-w-3xl rounded-lg px-4 py-3 text-md leading-relaxed sm:px-5 sm:text-md">
+            tell me about Logan Wells
+          </p>
+        </header>
+
+        <div class="turn-meta flex flex-col gap-4 border-b pb-3 sm:flex-row sm:items-center sm:justify-between">
+          <button class="elapsed-button inline-flex w-fit items-center gap-2 text-left text-md" type="button" data-viewing-toggle aria-expanded="false">
+            <span data-viewing-timer>Viewing for 0s</span>
+            <i class="fa-solid fa-chevron-right text-sm" aria-hidden="true"></i>
+          </button>
+
+          <div class="session-actions flex items-center gap-2">
+            <button class="icon-button" type="button" data-skip aria-label="Skip animation" title="Skip">
+              <i class="fa-solid fa-forward-step" aria-hidden="true"></i>
+            </button>
+            <button class="icon-button" type="button" data-restart aria-label="Restart animation" title="Restart">
+              <i class="fa-solid fa-rotate-right" aria-hidden="true"></i>
+            </button>
+            <span class="copy-action">
+              <button class="icon-button" type="button" data-copy aria-label="Copy profile summary">
+                <i class="fa-regular fa-copy" aria-hidden="true"></i>
+              </button>
+              <span class="copy-poof" data-copy-feedback role="status" aria-live="polite" aria-atomic="true"></span>
+            </span>
+            <button class="icon-button" type="button" data-theme-toggle aria-label="Switch theme" title="Switch theme">
+              <i class="fa-solid fa-circle-half-stroke" aria-hidden="true"></i>
+              <span class="sr-only" data-theme-label>session</span>
+            </button>
+          </div>
+        </div>
+
+        <article class="mt-7">
+          <div class="transcript-text text-md leading-8 sm:text-md sm:leading-10" data-transcript aria-live="polite"></div>
+          <p class="thinking-indicator mt-5 text-md" data-thinking aria-live="polite">
+            <span>Thinking</span>
+          </p>
+        </article>
+
+        <nav class="file-tray mt-8 grid gap-3" data-file-tray hidden aria-hidden="true" aria-label="Profile files">
+          <a class="file-attachment flex items-center gap-4 p-4 no-underline sm:p-5" href="https://github.com/wellslogan" target="_blank" rel="noreferrer noopener">
+            <span class="file-icon inline-flex shrink-0 items-center justify-center" aria-hidden="true">
+              <i class="fa-brands fa-github"></i>
+            </span>
+            <span class="min-w-0 flex-1">
+              <span class="block truncate text-base font-semibold">GitHub</span>
+              <span class="mt-1 block text-sm" style="color: var(--text-muted)">Profile · wellslogan</span>
+            </span>
+            <span class="open-button inline-flex shrink-0 items-center gap-2 px-4 py-2 text-sm" aria-hidden="true">
+              Open
+              <i class="fa-solid fa-chevron-down text-sm"></i>
+            </span>
+          </a>
+          <a class="file-attachment flex items-center gap-4 p-4 no-underline sm:p-5" href="https://linkedin.com/in/wellslogan1" target="_blank" rel="noreferrer noopener">
+            <span class="file-icon inline-flex shrink-0 items-center justify-center" aria-hidden="true">
+              <i class="fa-brands fa-linkedin-in"></i>
+            </span>
+            <span class="min-w-0 flex-1">
+              <span class="block truncate text-base font-semibold">LinkedIn</span>
+              <span class="mt-1 block text-sm" style="color: var(--text-muted)">Profile · wellslogan1</span>
+            </span>
+            <span class="open-button inline-flex shrink-0 items-center gap-2 px-4 py-2 text-sm" aria-hidden="true">
+              Open
+              <i class="fa-solid fa-chevron-down text-sm"></i>
+            </span>
+          </a>
+        </nav>
+      </section>
+    </main>
+  </body>
+</html>
