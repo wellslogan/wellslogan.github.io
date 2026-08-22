@@ -8,7 +8,7 @@
   var profileMarkdown = `
 What does it mean to be a software developer in the era of large language models? When you figure it out, let me know. Until then, I'm gonna keep on building.
 
-I'm Logan, full stack web developer based in Cambridge, Massachusetts. You might see me walking, listening, dining, ruminating, doomscrolling, or hiking the Greater Boston Area from time to time.
+I'm Logan, full-stack web developer based in Cambridge, Massachusetts. You might see me walking, listening, dining, ruminating, doomscrolling, or hiking the Greater Boston Area from time to time.
 
 When I'm on the clock, you'll find me building custom software solutions for the architecture, engineering, and construction industry with [Pelogic](https://pelogic.io). 
 `;
