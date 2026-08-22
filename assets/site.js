@@ -51,11 +51,16 @@ When I'm on the clock, you'll find me building custom software solutions for the
       });
     }
 
-    var paragraphNodes = messages.map(function () {
-      var node = document.createElement("p");
-      transcript.appendChild(node);
-      return node;
-    });
+    var paragraphNodes = Array.prototype.slice.call(transcript.querySelectorAll("p"));
+
+    if (paragraphNodes.length !== messages.length) {
+      transcript.textContent = "";
+      paragraphNodes = messages.map(function () {
+        var node = document.createElement("p");
+        transcript.appendChild(node);
+        return node;
+      });
+    }
 
     function validState(state) {
       if (!state || typeof state !== "object") {
