@@ -1,0 +1,13 @@
+{
+  "scripts": {
+    "build:css": "tailwindcss -i ./src/input.css -o ./assets/site.css --minify",
+    "watch:css": "tailwindcss -i ./src/input.css -o ./assets/site.css --watch",
+    "dev": "concurrently -k -n css,site -c cyan,magenta \"npm:watch:css\" \"browser-sync start --server . --files 'index.html,assets/site.css,assets/site.js' --port 4173 --no-open --no-notify\""
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.3.0",
+    "browser-sync": "^3.0.4",
+    "concurrently": "^9.2.1",
+    "tailwindcss": "^4.3.0"
+  }
+}
